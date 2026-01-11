@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You for Purchasing – Artemus</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: #11162a;
+      --accent: #1ea7ff;
+      --accent-2: #7c5cff;
+      --text: #e9ecf1;
+      --muted: #aab0c0;
+      --danger: #ff4d4d;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(124,92,255,0.25), transparent 60%),
+        radial-gradient(800px 400px at 90% 10%, rgba(30,167,255,0.25), transparent 60%),
+        linear-gradient(180deg, #060914, var(--bg));
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 860px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)) , var(--card);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 28px 28px 0 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 30% 30%, #ff6b6b, #7c0cff 60%, #2b0a3d);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: 1px;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.12);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(30,167,255,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(30,167,255,0.35);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .hero {
+      padding: 32px 28px 24px 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+
+    .hero h2 {
+      margin: 0 0 10px 0;
+      font-size: 36px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin: 0 0 18px 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #081018;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 24px rgba(30,167,255,0.35);
+      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.05); box-shadow: 0 14px 28px rgba(30,167,255,0.45); }
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: none;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(30,167,255,0.18);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 18px 28px 26px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .discord {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .discord span {
+      color: var(--accent);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="header">
+      <div class="brand">
+        <!-- Replace the logo below with your Artemus logo image if you want -->
+        <div class="logo">A</div>
+        <h1>ARTEMUS</h1>
+      </div>
+      <div class="pill">Order Complete</div>
+    </div>
+
+    <section class="hero">
+      <div>
+        <h2>THANKS FOR PURCHASING</h2>
+        <p>Your order has been received successfully. To continue and get support, please open a ticket in our Discord server below.</p>
+
+        <div class="cta">
+          <a class="btn" href="https://discord.gg/bHR8suQJjb" target="_blank" rel="noopener">
+            Open a Discord Ticket
+          </a>
+          <a class="btn secondary" href="#steps">How it works</a>
+        </div>
+      </div>
+
+      <div class="panel" id="steps">
+        <h3 style="margin:0 0 10px 0">Next Steps</h3>
+        <div class="steps">
+          <div class="step">
+            <div class="badge">1</div>
+            <div>Join our Discord using the button on the left.</div>
+          </div>
+          <div class="step">
+            <div class="badge">2</div>
+            <div>Open a support ticket in the appropriate channel.</div>
+          </div>
+          <div class="step">
+            <div class="badge">3</div>
+            <div>Provide your order details and wait for a staff response.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Artemus. All rights reserved.</div>
+      <a class="discord" href="https://discord.gg/bHR8suQJjb" target="_blank" rel="noopener">
+        Discord: <span>bHR8suQJjb</span>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
